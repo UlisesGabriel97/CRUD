@@ -22,10 +22,12 @@
 								<img src="/images/products/<%= element.image %>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2>$<%= element.price %></h2>
-								<% if (element.discount !== 0) {%>
-									<span><%= element.discount%>% OFF</span>
-								<% }%>
+								<% if (element.discount !== 0) {%> 
+								<h2>$<%= element.price*((100 - element.discount)/100).toFixed(2) %></h2>
+								<span><%= element.discount%>% OFF</span>
+								<% } else { %>
+									<h2>$<%= element.price %></h2>
+								<% } %> 								 
 								<p><%= element.name %></p>
 								<i class="fas fa-truck"></i>
 							</article>

@@ -27,12 +27,11 @@
 						<h2 class="product-detail-title"><%= producto.name %></h2>
 						<% if (producto.discount !== 0) {%> 
 							<p class="product-detail-price small">
-								<span>$<%= (producto.price/((100 - producto.discount)/100)).toFixed(2) %></span>
-								/
+								<span>$<%= producto.price %></span>
 								<b><%= producto.discount%>% OFF</b>
 							</p>
 							<p class="product-detail-price">
-								$<%= producto.price %>
+								$<%= producto.price*((100-producto.discount)/100).toFixed(2) %>
 							</p>
 						<% } else { %> 
 							<p class="product-detail-price">
