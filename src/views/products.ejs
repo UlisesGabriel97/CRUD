@@ -1,4 +1,4 @@
-«<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
 <%- include('partials/head', {title: 'Todos los productos'}) %>
@@ -23,7 +23,7 @@
 							</figure>
 							<article class="product-box_data">
 								<% if (element.discount !== 0) {%> 
-								<h2>$<%= element.price*((100 - element.discount)/100).toFixed(2) %></h2>
+								<h2>$<%= toThousand(Math.round(element.price*((100 - element.discount)/100))) %></h2>
 								<span><%= element.discount%>% OFF</span>
 								<% } else { %>
 									<h2>$<%= element.price %></h2>

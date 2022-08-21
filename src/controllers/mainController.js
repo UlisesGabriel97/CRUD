@@ -17,7 +17,8 @@ const controller = {
 		return res.render("index",
 		{
 			productosVisitados,
-			productosInSale			
+			productosInSale,
+			toThousand
 		});
 	},
 	search: (req, res) => {
